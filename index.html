@@ -4,6 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NovaGamers Community</title>
 <meta name="description" content="NovaGamers Community: noticias, torneos, rankings y guías para jugadores de todo el mundo. Únete a la comunidad gamer y vive el eSports al máximo nivel.">
+<meta name="robots" content="index, follow">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#090b12;color:#fff;overflow-x:hidden}
 body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at top,#5b2cff33,#000 60%);z-index:-2}
@@ -12,7 +13,7 @@ nav a{color:#fff;text-decoration:none;margin:0 10px}nav a:hover{color:#61dafb}
 .hero{height:100vh;display:grid;place-items:center;text-align:center;padding:20px;background:linear-gradient(135deg,#111,#0f1635)}
 h1{font-size:4rem;background:linear-gradient(90deg,#61dafb,#b14cff);-webkit-background-clip:text;color:transparent}
 .hero p{max-width:700px;margin:20px auto;color:#ddd}
-.btn{display:inline-block;padding:14px 28px;margin:10px;border-radius:30px;background:#61dafb;color:#000;font-weight:bold;text-decoration:none;transition:.3s}
+.btn{display:inline-block;padding:14px 28px;margin:10px;border-radius:30px;background:#61dafb;color:#000;font-weight:bold;text-decoration:none;transition:.3s;border:none;cursor:pointer;font-size:1rem}
 .btn:hover{transform:translateY(-3px);box-shadow:0 0 20px #61dafb}
 section{padding:90px 8%}h2{text-align:center;margin-bottom:40px;font-size:2.3rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px}
@@ -21,25 +22,32 @@ section{padding:90px 8%}h2{text-align:center;margin-bottom:40px;font-size:2.3rem
 .card img{width:100%;height:180px;object-fit:cover}
 .card div{padding:18px}
 .card p{color:#ccc;font-size:.95rem}
+.card .date{color:#61dafb;font-size:.8rem;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;text-align:center}
 .stat{padding:25px;background:#ffffff10;border-radius:15px}
 .num{font-size:2.4rem;color:#61dafb;font-weight:bold}
 table{width:100%;border-collapse:collapse;background:#ffffff10}
 th,td{padding:12px;border-bottom:1px solid #ffffff22;text-align:left}
 details{background:#ffffff10;padding:15px;border-radius:10px;margin:10px 0}
+summary{cursor:pointer;font-weight:bold}
 form{display:grid;gap:15px;max-width:700px;margin:auto}
-input,textarea{padding:14px;background:#111;border:1px solid #444;color:#fff;border-radius:8px}
+input,textarea{padding:14px;background:#111;border:1px solid #444;color:#fff;border-radius:8px;font-family:inherit}
+.honey{display:none}
+.form-status{text-align:center;max-width:700px;margin:14px auto 0;color:#61dafb;font-size:.95rem}
 .about-text{max-width:760px;margin:0 auto;color:#ddd;text-align:center}
 .about-text p{margin-bottom:16px}
 .contact-email{text-align:center;color:#aaa;margin-top:18px}
 .contact-email a{color:#61dafb;text-decoration:none}
+.guide-list{max-width:760px;margin:0 auto}
+.guide-list li{color:#ddd;margin-bottom:14px;list-style:none;padding-left:22px;position:relative}
+.guide-list li:before{content:"▸";color:#61dafb;position:absolute;left:0}
 footer{text-align:center;padding:35px;background:#05070d;color:#aaa}
 footer a{color:#61dafb;text-decoration:none;margin:0 6px}
-#top{position:fixed;bottom:20px;right:20px;padding:12px;border:none;border-radius:50%;background:#61dafb;display:none}
+#top{position:fixed;bottom:20px;right:20px;padding:12px;border:none;border-radius:50%;background:#61dafb;display:none;cursor:pointer}
 @media(max-width:700px){h1{font-size:2.6rem}nav{padding:14px 4%;font-size:.9rem}}
 </style></head>
 <body>
-<nav><strong>🎮 NovaGamers</strong><div><a href="#games">Juegos</a><a href="#news">Noticias</a><a href="#rank">Ranking</a><a href="#about">Nosotros</a><a href="#contact">Contacto</a></div></nav>
+<nav><strong>🎮 NovaGamers</strong><div><a href="#games">Juegos</a><a href="#news">Noticias</a><a href="#rank">Ranking</a><a href="#guides">Guías</a><a href="#about">Nosotros</a><a href="#contact">Contacto</a></div></nav>
 <section class="hero">
 <div><h1 id="title"></h1><p>Una comunidad gamer profesional con noticias, torneos, guías, clanes y competiciones para jugadores de todo el mundo.</p><a class="btn" href="#games">Explorar</a><a class="btn" href="#contact">Únete</a></div>
 </section>
@@ -50,24 +58,35 @@ footer a{color:#61dafb;text-decoration:none;margin:0 6px}
 <div class="stat"><div class="num" data-n="120">0</div>Países</div>
 </div></section>
 <section id="games"><h2>Juegos Destacados</h2><div class="grid">
-<div class="card"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"><div><h3>FPS Arena</h3><p>Compite al máximo nivel en partidas rápidas y torneos clasificatorios diseñados para poner a prueba tu puntería y estrategia en equipo.</p></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"><div><h3>Fantasy RPG</h3><p>Explora mundos abiertos épicos, completa misiones narrativas y forma parte de clanes que luchan por el control de territorios legendarios.</p></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"><div><h3>eSports</h3><p>Sigue los torneos internacionales más importantes, con análisis de partidas, estadísticas de jugadores y cobertura en directo de las finales.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"><div><h3>FPS Arena</h3><p>Compite al máximo nivel en partidas rápidas y torneos clasificatorios diseñados para poner a prueba tu puntería y estrategia en equipo. Incluye modos competitivos por temporadas y sistema de ligas con ascensos y descensos.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"><div><h3>Fantasy RPG</h3><p>Explora mundos abiertos épicos, completa misiones narrativas y forma parte de clanes que luchan por el control de territorios legendarios. Sistema de progresión profundo con cientos de horas de contenido.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"><div><h3>eSports</h3><p>Sigue los torneos internacionales más importantes, con análisis de partidas, estadísticas de jugadores y cobertura en directo de las finales. Cobertura semanal de los principales circuitos competitivos.</p></div></div>
 </div></section>
 <section id="news"><h2>Noticias</h2><div class="grid">
-<div class="card"><div><h3>Nueva Temporada</h3><p>Arranca una nueva temporada competitiva con eventos exclusivos, misiones temáticas y recompensas especiales para los jugadores que participen en los primeros torneos clasificatorios del mes.</p></div></div>
-<div class="card"><div><h3>Actualización</h3><p>La última actualización trae un rebalanceo competitivo pensado para equilibrar el metajuego, además de mejoras de rendimiento y corrección de errores reportados por la comunidad.</p></div></div>
-<div class="card"><div><h3>Final Mundial</h3><p>Los mejores equipos del circuito internacional se enfrentan este mes en la gran final mundial, con cobertura especial, análisis post-partida y entrevistas exclusivas a los jugadores.</p></div></div>
+<div class="card"><div><span class="date">15 junio 2026</span><h3>Nueva Temporada Competitiva</h3><p>Arranca la temporada 12 con un nuevo sistema de clasificación por divisiones, misiones temáticas diarias y recompensas exclusivas para quienes completen los primeros torneos clasificatorios del mes. La comunidad ya ha empezado a organizar sus propias ligas internas para prepararse.</p></div></div>
+<div class="card"><div><span class="date">8 junio 2026</span><h3>Parche de Balance 4.3</h3><p>La última actualización rebalancea varias clases y habilidades para corregir el metajuego dominante de las últimas semanas, además de incluir mejoras de rendimiento en servidores y solución a más de veinte errores reportados directamente por la comunidad en nuestro foro.</p></div></div>
+<div class="card"><div><span class="date">1 junio 2026</span><h3>Camino a la Final Mundial</h3><p>Los ocho equipos clasificados para la gran final mundial ya están confirmados. Repasamos su trayectoria durante la fase de grupos, los jugadores destacados de cada plantilla y qué podemos esperar del enfrentamiento de cuartos de final este fin de semana.</p></div></div>
+<div class="card"><div><span class="date">24 mayo 2026</span><h3>Entrevista: detrás del éxito de ShadowX</h3><p>Hablamos con ShadowX, líder actual del ranking global, sobre su rutina de entrenamiento, cómo gestiona la presión en torneos en directo y qué consejos daría a los jugadores que empiezan a competir en el circuito amateur.</p></div></div>
 </div></section>
 <section id="rank"><h2>Ranking</h2><table>
-<tr><th>#</th><th>Jugador</th><th>Puntos</th></tr>
-<tr><td>1</td><td>ShadowX</td><td>9850</td></tr>
-<tr><td>2</td><td>Nova</td><td>9540</td></tr>
-<tr><td>3</td><td>Ghost</td><td>9310</td></tr>
+<tr><th>#</th><th>Jugador</th><th>Puntos</th><th>Región</th></tr>
+<tr><td>1</td><td>ShadowX</td><td>9850</td><td>EU</td></tr>
+<tr><td>2</td><td>Nova</td><td>9540</td><td>NA</td></tr>
+<tr><td>3</td><td>Ghost</td><td>9310</td><td>EU</td></tr>
+<tr><td>4</td><td>Kaze</td><td>9120</td><td>APAC</td></tr>
+<tr><td>5</td><td>Lyra</td><td>8990</td><td>LATAM</td></tr>
 </table></section>
+<section id="guides"><h2>Guías Rápidas</h2>
+<ul class="guide-list">
+<li><strong>Mejora tu puntería en FPS Arena:</strong> practica en el campo de entrenamiento al menos 15 minutos antes de cada sesión competitiva para calentar la sensibilidad y el control de retroceso.</li>
+<li><strong>Optimiza tu build en Fantasy RPG:</strong> prioriza los puntos de habilidad en defensa durante las primeras 10 horas de juego para sobrevivir a las mazmorras de dificultad media sin morir constantemente.</li>
+<li><strong>Cómo prepararte para tu primer torneo:</strong> revisa el reglamento oficial, practica en el formato de eliminación directa y juega al menos cinco partidas de scrim con tu equipo antes de inscribiros.</li>
+</ul>
+</section>
 <section><h2>FAQ</h2>
-<details><summary>¿Cómo participar?</summary><p>Regístrate y únete a un torneo.</p></details>
-<details><summary>¿Es gratis?</summary><p>Sí, la comunidad es gratuita.</p></details>
+<details><summary>¿Cómo participar?</summary><p>Regístrate gratuitamente desde el formulario de contacto y únete a uno de los torneos abiertos que anunciamos semanalmente en la sección de noticias.</p></details>
+<details><summary>¿Es gratis?</summary><p>Sí, el acceso a la comunidad, los rankings y la participación en torneos abiertos es completamente gratuito.</p></details>
+<details><summary>¿Necesito experiencia previa para unirme?</summary><p>No, tenemos torneos para todos los niveles, desde principiantes hasta jugadores de circuito profesional.</p></details>
 </section>
 <section id="about"><h2>Sobre Nosotros</h2>
 <div class="about-text">
@@ -76,7 +95,16 @@ footer a{color:#61dafb;text-decoration:none;margin:0 6px}
 </div>
 </section>
 <section id="contact"><h2>Contacto</h2>
-<form><input placeholder="Nombre"><input type="email" placeholder="Correo"><textarea rows="5" placeholder="Mensaje"></textarea><button class="btn">Enviar</button></form>
+<form id="contactForm" action="https://formsubmit.co/contacto@novagamers.example" method="POST">
+<input type="text" name="_honey" class="honey">
+<input type="hidden" name="_subject" value="Nuevo mensaje desde NovaGamers Community">
+<input type="hidden" name="_captcha" value="false">
+<input type="text" name="nombre" placeholder="Nombre" required>
+<input type="email" name="email" placeholder="Correo" required>
+<textarea name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+<button class="btn" type="submit">Enviar</button>
+</form>
+<p class="form-status" id="formStatus"></p>
 <p class="contact-email">¿Prefieres escribirnos directamente? Contáctanos en <a href="mailto:contacto@novagamers.example">contacto@novagamers.example</a></p>
 </section>
 <footer>© 2026 NovaGamers Community · Vive el gaming al máximo.<br><a href="privacidad.html">Política de Privacidad</a> · <a href="terminos.html">Términos de Uso</a></footer>
@@ -86,7 +114,5 @@ const txt="NOVA GAMERS COMMUNITY";let i=0;setInterval(()=>{if(i<=txt.length)titl
 document.querySelectorAll(".num").forEach(n=>{let t=+n.dataset.n,c=0,s=t/80;let f=()=>{c+=s;if(c<t){n.textContent=Math.floor(c).toLocaleString();requestAnimationFrame(f)}else n.textContent=t.toLocaleString()};new IntersectionObserver(e=>{if(e[0].isIntersecting)f()},{threshold:.4}).observe(n)});
 onscroll=()=>top.style.display=scrollY>400?"block":"none";
 top.onclick=()=>scrollTo({top:0,behavior:"smooth"});
-document.querySelector("form").onsubmit=e=>{e.preventDefault();alert("¡Mensaje enviado!");};
 </script>
 </body></html>
-
