@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NovaGamers Community</title>
+<meta name="description" content="NovaGamers Community: noticias, torneos, rankings y guías para jugadores de todo el mundo. Únete a la comunidad gamer y vive el eSports al máximo nivel.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#090b12;color:#fff;overflow-x:hidden}
 body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at top,#5b2cff33,#000 60%);z-index:-2}
@@ -19,6 +20,7 @@ section{padding:90px 8%}h2{text-align:center;margin-bottom:40px;font-size:2.3rem
 .card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 0 30px #61dafb44}
 .card img{width:100%;height:180px;object-fit:cover}
 .card div{padding:18px}
+.card p{color:#ccc;font-size:.95rem}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;text-align:center}
 .stat{padding:25px;background:#ffffff10;border-radius:15px}
 .num{font-size:2.4rem;color:#61dafb;font-weight:bold}
@@ -27,13 +29,17 @@ th,td{padding:12px;border-bottom:1px solid #ffffff22;text-align:left}
 details{background:#ffffff10;padding:15px;border-radius:10px;margin:10px 0}
 form{display:grid;gap:15px;max-width:700px;margin:auto}
 input,textarea{padding:14px;background:#111;border:1px solid #444;color:#fff;border-radius:8px}
+.about-text{max-width:760px;margin:0 auto;color:#ddd;text-align:center}
+.about-text p{margin-bottom:16px}
+.contact-email{text-align:center;color:#aaa;margin-top:18px}
+.contact-email a{color:#61dafb;text-decoration:none}
 footer{text-align:center;padding:35px;background:#05070d;color:#aaa}
-footer a{color:#61dafb;text-decoration:none}
+footer a{color:#61dafb;text-decoration:none;margin:0 6px}
 #top{position:fixed;bottom:20px;right:20px;padding:12px;border:none;border-radius:50%;background:#61dafb;display:none}
 @media(max-width:700px){h1{font-size:2.6rem}nav{padding:14px 4%;font-size:.9rem}}
 </style></head>
 <body>
-<nav><strong>🎮 NovaGamers</strong><div><a href="#games">Juegos</a><a href="#news">Noticias</a><a href="#rank">Ranking</a><a href="#contact">Contacto</a></div></nav>
+<nav><strong>🎮 NovaGamers</strong><div><a href="#games">Juegos</a><a href="#news">Noticias</a><a href="#rank">Ranking</a><a href="#about">Nosotros</a><a href="#contact">Contacto</a></div></nav>
 <section class="hero">
 <div><h1 id="title"></h1><p>Una comunidad gamer profesional con noticias, torneos, guías, clanes y competiciones para jugadores de todo el mundo.</p><a class="btn" href="#games">Explorar</a><a class="btn" href="#contact">Únete</a></div>
 </section>
@@ -44,14 +50,14 @@ footer a{color:#61dafb;text-decoration:none}
 <div class="stat"><div class="num" data-n="120">0</div>Países</div>
 </div></section>
 <section id="games"><h2>Juegos Destacados</h2><div class="grid">
-<div class="card"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"><div><h3>FPS Arena</h3><p>Compite al máximo nivel.</p></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"><div><h3>Fantasy RPG</h3><p>Mundos abiertos épicos.</p></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"><div><h3>eSports</h3><p>Torneos internacionales.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=900"><div><h3>FPS Arena</h3><p>Compite al máximo nivel en partidas rápidas y torneos clasificatorios diseñados para poner a prueba tu puntería y estrategia en equipo.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=900"><div><h3>Fantasy RPG</h3><p>Explora mundos abiertos épicos, completa misiones narrativas y forma parte de clanes que luchan por el control de territorios legendarios.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=900"><div><h3>eSports</h3><p>Sigue los torneos internacionales más importantes, con análisis de partidas, estadísticas de jugadores y cobertura en directo de las finales.</p></div></div>
 </div></section>
 <section id="news"><h2>Noticias</h2><div class="grid">
-<div class="card"><div><h3>Nueva Temporada</h3><p>Eventos exclusivos y recompensas.</p></div></div>
-<div class="card"><div><h3>Actualización</h3><p>Balance competitivo y mejoras.</p></div></div>
-<div class="card"><div><h3>Final Mundial</h3><p>Los mejores equipos luchan por el título.</p></div></div>
+<div class="card"><div><h3>Nueva Temporada</h3><p>Arranca una nueva temporada competitiva con eventos exclusivos, misiones temáticas y recompensas especiales para los jugadores que participen en los primeros torneos clasificatorios del mes.</p></div></div>
+<div class="card"><div><h3>Actualización</h3><p>La última actualización trae un rebalanceo competitivo pensado para equilibrar el metajuego, además de mejoras de rendimiento y corrección de errores reportados por la comunidad.</p></div></div>
+<div class="card"><div><h3>Final Mundial</h3><p>Los mejores equipos del circuito internacional se enfrentan este mes en la gran final mundial, con cobertura especial, análisis post-partida y entrevistas exclusivas a los jugadores.</p></div></div>
 </div></section>
 <section id="rank"><h2>Ranking</h2><table>
 <tr><th>#</th><th>Jugador</th><th>Puntos</th></tr>
@@ -63,10 +69,17 @@ footer a{color:#61dafb;text-decoration:none}
 <details><summary>¿Cómo participar?</summary><p>Regístrate y únete a un torneo.</p></details>
 <details><summary>¿Es gratis?</summary><p>Sí, la comunidad es gratuita.</p></details>
 </section>
+<section id="about"><h2>Sobre Nosotros</h2>
+<div class="about-text">
+<p>NovaGamers Community nació con el objetivo de crear un espacio donde jugadores de todos los niveles puedan informarse, competir y conectar entre sí. Cubrimos noticias del sector, organizamos rankings de la comunidad y compartimos contenido sobre los títulos más relevantes del momento.</p>
+<p>Nuestro equipo está formado por aficionados a los videojuegos y a los eSports que trabajan para ofrecer información actualizada, guías útiles y un punto de encuentro para la comunidad gamer hispanohablante.</p>
+</div>
+</section>
 <section id="contact"><h2>Contacto</h2>
 <form><input placeholder="Nombre"><input type="email" placeholder="Correo"><textarea rows="5" placeholder="Mensaje"></textarea><button class="btn">Enviar</button></form>
+<p class="contact-email">¿Prefieres escribirnos directamente? Contáctanos en <a href="mailto:contacto@novagamers.example">contacto@novagamers.example</a></p>
 </section>
-<footer>© 2026 NovaGamers Community · Vive el gaming al máximo. · <a href="privacidad.html">Política de Privacidad</a></footer>
+<footer>© 2026 NovaGamers Community · Vive el gaming al máximo.<br><a href="privacidad.html">Política de Privacidad</a> · <a href="terminos.html">Términos de Uso</a></footer>
 <button id="top">↑</button>
 <script>
 const txt="NOVA GAMERS COMMUNITY";let i=0;setInterval(()=>{if(i<=txt.length)title.textContent=txt.slice(0,i++);},90);
@@ -76,3 +89,4 @@ top.onclick=()=>scrollTo({top:0,behavior:"smooth"});
 document.querySelector("form").onsubmit=e=>{e.preventDefault();alert("¡Mensaje enviado!");};
 </script>
 </body></html>
+
